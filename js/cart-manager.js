@@ -13,6 +13,7 @@ class CartManager {
         CartManager.instance = this;
 
         this.cartKey = 'chipMarketCart';
+        this.ordersKey = 'chipMarketOrders';
         this.eventListeners = [];
     }
 
@@ -109,24 +110,46 @@ class CartManager {
         this.eventListeners.forEach((callback) => callback());
     }
 
-    // Handle checkout process
-    proceedToCheckout() {
+    saveOrder() {
         const cartItems = this.getCartItems();
-        if (cartItems.length === 0) {
-            alert('Your cart is empty');
+        const userId = sessionStorage.getItem('auth0_user_id');
+
+        if (!userId) {
+            alert('User is not authenticated. Please log in.');
             return;
         }
 
-        // Here you would typically redirect to a checkout page
-        alert(
-            'Proceeding to checkout with ' +
-                this.getTotalItems() +
-                ' items totaling $' +
-                this.getTotalPrice().toFixed(2)
-        );
+        if (cartItems.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        } else {
+            alert(
+                'Proceeding to checkout with ' +
+                    this.getTotalItems() +
+                    ' items totaling $' +
+                    this.getTotalPrice().toFixed(2)
+            );
+        }
 
-        // You could redirect to a checkout page:
-        // window.location.href = './checkout.html';
+        const order = {
+            userId: userId,
+            items: cartItems,
+            totalQuantity: this.getTotalItems(),
+            totalPrice: this.getTotalPrice().toFixed(2),
+            timestamp: new Date().toISOString(),
+        };
+
+        let orders = localStorage.getItem(this.ordersKey);
+        orders = orders ? JSON.parse(orders) : [];
+        orders.push(order);
+
+        localStorage.setItem(this.ordersKey, JSON.stringify(orders));
+        this.clearCart();
+    }
+
+    // Handle checkout process
+    proceedToCheckout() {
+        this.saveOrder();
     }
 }
 

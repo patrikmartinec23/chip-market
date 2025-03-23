@@ -5,9 +5,18 @@ class NavbarComponent {
         // Use the global cart manager instance
         this.cartManager = window.cartManager;
 
+        // Use the global auth instance
+        this.auth = window.auth;
+
         // Listen for cart updates
         this.cartManager.addEventListener(() => {
             this.updateCartDisplay();
+        });
+
+        // Listen for auth state changes
+        document.addEventListener('authStateChanged', () => {
+            this.updateAuthDisplay();
+            this.updateCartDisplay(); // Add this to update cart when auth state changes
         });
     }
 
@@ -55,13 +64,8 @@ class NavbarComponent {
                         <ul class="navbar-nav mx-auto mb-2 mb-md-0">
                             ${this.createNavItems()}
                         </ul>
-                        <div class="d-flex justify-content-center justify-content-md-start">
-                            <button type="button" class="btn btn-outline-primary me-2">
-                                Login
-                            </button>
-                            <button type="button" class="btn btn-primary me-2">
-                                Sign-up
-                            </button>
+                        <div class="d-flex justify-content-center justify-content-md-start auth-buttons">
+                            <!-- Auth buttons will be inserted here -->
                         </div>
                     </div>
                 </div>
@@ -70,6 +74,7 @@ class NavbarComponent {
 
         this.addEventListeners();
         this.updateCartDisplay();
+        this.updateAuthDisplay();
     }
 
     getActiveLink() {
@@ -147,19 +152,6 @@ class NavbarComponent {
     }
 
     addEventListeners() {
-        const loginBtn = this.container.querySelector(
-            '.btn-outline-primary:not([id="cartDropdown"])'
-        );
-        const signupBtn = this.container.querySelector('.btn-primary');
-
-        loginBtn?.addEventListener('click', () => {
-            console.log('Login clicked');
-        });
-
-        signupBtn?.addEventListener('click', () => {
-            console.log('Signup clicked');
-        });
-
         // Add cart-specific event listeners
         this.addCartEventListeners();
     }
@@ -195,12 +187,14 @@ class NavbarComponent {
         const cartDropdown = this.container.querySelector(
             '.cart-dropdown-menu'
         );
-
         if (!cartDropdown) return;
 
         const cartItems = this.cartManager.getCartItems();
         const cartItemsContainer = cartDropdown.querySelector('.cart-items');
         const cartTotalElement = cartDropdown.querySelector('.cart-total');
+        const checkoutButtonContainer = cartDropdown.querySelector(
+            '.d-flex.justify-content-between.align-items-center.mt-3'
+        );
 
         // Clear existing items
         if (cartItemsContainer) {
@@ -258,6 +252,38 @@ class NavbarComponent {
                 .getTotalPrice()
                 .toFixed(2);
         }
+
+        // Update checkout button based on auth state
+        if (checkoutButtonContainer) {
+            const buttonContainer =
+                checkoutButtonContainer.querySelector('button');
+            if (buttonContainer) {
+                // Remove old button and its event listener
+                buttonContainer.remove();
+            }
+
+            // Create the appropriate button based on auth state
+            const button = document.createElement('button');
+
+            if (this.auth.isAuthenticated()) {
+                // User is logged in - show checkout button
+                button.className = 'btn btn-primary btn-sm btn-checkout';
+                button.textContent = 'Checkout';
+                button.addEventListener('click', () => {
+                    this.cartManager.proceedToCheckout();
+                });
+            } else {
+                // User is not logged in - show login button
+                button.className = 'btn btn-outline-primary btn-sm btn-login';
+                button.textContent = 'Login to Checkout';
+                button.addEventListener('click', () => {
+                    this.auth.login();
+                });
+            }
+
+            // Add the new button
+            checkoutButtonContainer.appendChild(button);
+        }
     }
 
     addCartItemEventListeners() {
@@ -302,6 +328,47 @@ class NavbarComponent {
                 this.cartManager.removeItem(+itemId);
             });
         });
+    }
+
+    updateAuthDisplay() {
+        const authButtonsContainer =
+            this.container.querySelector('.auth-buttons');
+        if (!authButtonsContainer) return;
+
+        // Clear existing buttons
+        authButtonsContainer.innerHTML = '';
+
+        if (this.auth.isAuthenticated()) {
+            // User is logged in - show user info and logout button
+            const user = this.auth.getCurrentUser();
+
+            const userElement = document.createElement('span');
+            userElement.className = 'me-3 align-self-center';
+            userElement.textContent = `Hello, ${user.name || user.email}`;
+            authButtonsContainer.appendChild(userElement);
+
+            const logoutBtn = document.createElement('button');
+            logoutBtn.type = 'button';
+            logoutBtn.className = 'btn btn-outline-danger';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.addEventListener('click', () => this.auth.logout());
+            authButtonsContainer.appendChild(logoutBtn);
+        } else {
+            // User is not logged in - show login and signup buttons
+            const loginBtn = document.createElement('button');
+            loginBtn.type = 'button';
+            loginBtn.className = 'btn btn-outline-primary me-2';
+            loginBtn.textContent = 'Login';
+            loginBtn.addEventListener('click', () => this.auth.login());
+            authButtonsContainer.appendChild(loginBtn);
+
+            const signupBtn = document.createElement('button');
+            signupBtn.type = 'button';
+            signupBtn.className = 'btn btn-primary me-2';
+            signupBtn.textContent = 'Sign-up';
+            signupBtn.addEventListener('click', () => this.auth.signup());
+            authButtonsContainer.appendChild(signupBtn);
+        }
     }
 }
 
