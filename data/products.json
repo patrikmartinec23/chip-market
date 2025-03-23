@@ -1,0 +1,227 @@
+[
+    {
+      "id": 1,
+      "name": "NVIDIA GeForce RTX 4090",
+      "price": 1599.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "gpus",
+      "description": "NVIDIA's flagship graphics card with 24GB GDDR6X memory and unparalleled performance.",
+      "deal": 20
+    },
+    {
+      "id": 2,
+      "name": "NVIDIA GeForce RTX 4080 Super",
+      "price": 999.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "gpus",
+      "description": "High-end gaming GPU with 16GB GDDR6X memory and excellent ray tracing performance.",
+      "deal": 0
+    },
+    {
+      "id": 3,
+      "name": "AMD Radeon RX 7900 XTX",
+      "price": 949.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "gpus",
+      "description": "AMD's top-tier graphics card with 24GB GDDR6 memory and competitive 4K gaming performance.",
+      "deal": 10
+    },
+    {
+      "id": 4,
+      "name": "NVIDIA GeForce RTX 4070 Ti",
+      "price": 799.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "gpus",
+      "description": "Excellent mid-high range GPU offering great value for 1440p and entry 4K gaming.",
+      "deal": 0
+    },
+    {
+      "id": 5,
+      "name": "AMD Radeon RX 7800 XT",
+      "price": 499.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "gpus",
+      "description": "Mid-range GPU with excellent price-to-performance ratio for 1440p gaming.",
+      "deal": 0
+    },
+    {
+      "id": 6,
+      "name": "Intel Core i9-14900K",
+      "price": 589.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "cpus",
+      "description": "Intel's flagship processor with 24 cores, 32 threads, and boost speeds up to 6.0GHz.",
+      "deal": 20
+    },
+    {
+      "id": 7,
+      "name": "AMD Ryzen 9 7950X",
+      "price": 549.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "cpus",
+      "description": "High-end AMD processor with 16 cores, 32 threads, and excellent multi-threaded performance.",
+      "deal": 0
+    },
+    {
+      "id": 8,
+      "name": "Intel Core i7-14700K",
+      "price": 409.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "cpus",
+      "description": "Powerful mid-range CPU with 20 cores, 28 threads, ideal for gaming and content creation.",
+      "deal": 0
+    },
+    {
+      "id": 9,
+      "name": "AMD Ryzen 7 7800X3D",
+      "price": 449.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "cpus",
+      "description": "Gaming-focused CPU with 8 cores, 16 threads, and AMD's 3D V-Cache technology.",
+      "deal": 10
+    },
+    {
+      "id": 10,
+      "name": "Intel Core i5-14600K",
+      "price": 319.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "cpus",
+      "description": "Value-oriented CPU with 14 cores, 20 threads, perfect for gaming builds.",
+      "deal": 0
+    },
+    {
+      "id": 11,
+      "name": "Samsung 990 PRO 2TB NVMe SSD",
+      "price": 189.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "memory",
+      "description": "Ultra-fast PCIe 4.0 SSD with sequential reads up to 7,450 MB/s and writes up to 6,900 MB/s.",
+      "deal": 20
+    },
+    {
+      "id": 12,
+      "name": "Corsair Vengeance DDR5 32GB (2x16GB)",
+      "price": 129.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "memory",
+      "description": "High-performance DDR5 memory kit with speeds up to 6000MHz and low latency.",
+      "deal": 0
+    },
+    {
+      "id": 13,
+      "name": "WD Black 8TB External HDD",
+      "price": 179.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "memory",
+      "description": "High-capacity external hard drive for game libraries and media storage.",
+      "deal": 5
+    },
+    {
+      "id": 14,
+      "name": "G.Skill Trident Z5 RGB 64GB (2x32GB)",
+      "price": 299.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "memory",
+      "description": "Premium DDR5 memory with RGB lighting, speeds up to 6400MHz, ideal for high-end workstations.",
+      "deal": 0
+    },
+    {
+      "id": 15,
+      "name": "Seagate IronWolf Pro 16TB NAS HDD",
+      "price": 359.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "memory",
+      "description": "Enterprise-grade NAS hard drive with 24/7 reliability and workload rates up to 300TB/year.",
+      "deal": 0
+    },
+    {
+      "id": 16,
+      "name": "NVIDIA H200 Tensor Core GPU",
+      "price": 30000.00,
+      "image": "/api/placeholder/500/500",
+      "tag": "ai",
+      "description": "Cutting-edge AI accelerator with 132GB HBM3e memory for high-performance training and inference.",
+      "deal": 5
+    },
+    {
+      "id": 17,
+      "name": "AMD Instinct MI300X",
+      "price": 25000.00,
+      "image": "/api/placeholder/500/500",
+      "tag": "ai",
+      "description": "High-performance AI accelerator with 192GB HBM3 memory, ideal for large language models.",
+      "deal": 0
+    },
+    {
+      "id": 18,
+      "name": "Intel Gaudi 3 AI Accelerator",
+      "price": 20000.00,
+      "image": "/api/placeholder/500/500",
+      "tag": "ai",
+      "description": "Enterprise AI training and inference accelerator with high throughput and energy efficiency.",
+      "deal": 0
+    },
+    {
+      "id": 19,
+      "name": "Xilinx Alveo U280 FPGA",
+      "price": 8999.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "ai",
+      "description": "Data center FPGA accelerator card designed for real-time compute-intensive workloads.",
+      "deal": 10
+    },
+    {
+      "id": 20,
+      "name": "Google TPU v5",
+      "price": 15000.00,
+      "image": "/api/placeholder/500/500",
+      "tag": "ai",
+      "description": "Custom-built AI accelerator with specialized matrix processor for machine learning workloads.",
+      "deal": 0
+    },
+    {
+      "id": 21,
+      "name": "Dell PowerEdge R760",
+      "price": 8999.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "server",
+      "description": "2U rack server with dual Intel Xeon CPUs, up to 4TB RAM, and extensive storage options.",
+      "deal": 10
+    },
+    {
+      "id": 22,
+      "name": "HPE ProLiant DL380 Gen11",
+      "price": 7299.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "server",
+      "description": "Industry-standard 2U rack server for enterprise applications with comprehensive management features.",
+      "deal": 20
+    },
+    {
+      "id": 23,
+      "name": "Lenovo ThinkSystem SR650 V3",
+      "price": 6899.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "server",
+      "description": "Versatile 2U rack server suitable for business-critical workloads and cloud environments.",
+      "deal": 0
+    },
+    {
+      "id": 24,
+      "name": "Supermicro SuperServer 2049U-TR4",
+      "price": 10999.99,
+      "image": "/api/placeholder/500/500",
+      "tag": "server",
+      "description": "High-density 2U server with four-way processing power for mission-critical applications.",
+      "deal": 0
+    },
+    {
+      "id": 25,
+      "name": "NetApp AFF A400",
+      "price": 25000.00,
+      "image": "/api/placeholder/500/500",
+      "tag": "server",
+      "description": "Enterprise-grade all-flash storage array with superior performance and integrated data protection.",
+      "deal": 0
+    }
+]

@@ -1,0 +1,188 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.carousel-indicators button {
+    background-color: white !important; /* Makes inactive indicators white */
+    opacity: 0.5 !important;
+}
+
+.carousel-indicators .active {
+    background-color: white !important; /* Makes inactive indicators white */
+    opacity: 1 !important;
+}
+
+#myCarousel {
+    width: 100%;
+    position: relative;
+}
+
+#myCarousel::before {
+    content: '';
+    display: block;
+    padding-top: 40%; /* Aspect ratio: 40% means height will be 40% of width */
+}
+
+#myCarousel .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#myCarousel .carousel-item,
+#myCarousel .carousel-item svg {
+    height: 100%;
+    width: 100%;
+}
+
+.products {
+    min-height: 100vh;
+}
+
+/* Product card styling */
+.product-card {
+    transition: transform 0.3s;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-tag {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+    background-color: #76b900;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#products-container {
+    min-height: 300px;
+}
+
+.product-image-container {
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.category-checkbox {
+    display: block;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+.category-checkbox:hover {
+    background-color: #e9ecef;
+}
+
+.category-checkbox input {
+    margin-right: 10px;
+}
+
+.form-check-input:checked {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.deal-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.product-price-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+.product-original-price {
+    text-decoration: line-through;
+    color: #6c757d;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.product-discounted-price {
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 0;
+}
+
+/* Responsive image container adjustments */
+@media (max-width: 1199.98px) {
+    .product-image-container {
+        height: 220px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .product-image-container {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .product-image-container {
+        height: 250px;
+        width: 250px;
+    }
+}
