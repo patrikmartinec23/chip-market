@@ -1,3 +1,30 @@
+#subscription {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+#subscription .card {
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease-in-out;
+}
+
+#subscription .card:hover {
+    transform: scale(1.05);
+}
+
+#subscription h2 {
+    color: #007bff;
+    font-size: 2rem;
+}
+
+#subscription .list-unstyled li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
 #navbar {
     position: sticky;
     top: 0;
@@ -11,12 +38,12 @@
 }
 
 .carousel-indicators button {
-    background-color: white !important; /* Makes inactive indicators white */
+    background-color: white !important;
     opacity: 0.5 !important;
 }
 
 .carousel-indicators .active {
-    background-color: white !important; /* Makes inactive indicators white */
+    background-color: white !important;
     opacity: 1 !important;
 }
 
@@ -28,7 +55,7 @@
 #myCarousel::before {
     content: '';
     display: block;
-    padding-top: 40%; /* Aspect ratio: 40% means height will be 40% of width */
+    padding-top: 40%;
 }
 
 #myCarousel .carousel-inner {
@@ -165,7 +192,6 @@
     margin-bottom: 0;
 }
 
-/* Responsive image container adjustments */
 @media (max-width: 1199.98px) {
     .product-image-container {
         height: 220px;

@@ -22,7 +22,7 @@ class NavbarComponent {
 
     render() {
         this.container.innerHTML = `
-            <nav class="navbar navbar-expand-md shadow mb-4 sticky-top">
+            <nav class="navbar navbar-expand-lg shadow mb-4 sticky-top">
                 <div class="container">
                     <a href="/" class="navbar-brand">
                         <h1 class="fs-4 m-0 link-primary">Chip Market</h1>

@@ -21,6 +21,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="icon" href="./images/favicon.png" />
 
         <script src="https://cdn.auth0.com/js/auth0/9.19.0/auth0.min.js"></script>
         <script src="./js/script.js"></script>
@@ -91,7 +92,9 @@
                             <div class="carousel-caption text-light">
                                 <h1>GPUs & AI Chips</h1>
                                 <p>
-                                    <a class="btn btn-lg btn-info mt-2" href="#"
+                                    <a
+                                        class="btn btn-lg btn-info mt-2"
+                                        href="./products.html"
                                         >Browse</a
                                     >
                                 </p>
@@ -108,7 +111,9 @@
                             <div class="carousel-caption text-end text-light">
                                 <h1>Server & Data Center Chips</h1>
                                 <p>
-                                    <a class="btn btn-lg btn-info mt-2" href="#"
+                                    <a
+                                        class="btn btn-lg btn-info mt-2"
+                                        href="./products.html"
                                         >Browse</a
                                     >
                                 </p>
@@ -159,12 +164,10 @@
                             />
                         </div>
                         <div class="col-lg-6">
-                            <h1
-                                class="display-5 fw-bold text-body-emphasis lh-1 mb-3"
-                            >
+                            <h1 class="display-5 fw-bold text-light lh-1 mb-3">
                                 Browse Products
                             </h1>
-                            <p class="lead">
+                            <p class="lead text-light">
                                 Browse our carefully curated selection of
                                 brand-new computer chips, including
                                 <strong>GPU</strong>s, <strong>CPU</strong>s,
@@ -178,18 +181,18 @@
                             <div
                                 class="d-grid gap-2 d-md-flex justify-content-md-start"
                             >
-                                <button
-                                    type="button"
+                                <a
+                                    href="./products.html"
                                     class="btn btn-primary btn-lg px-4 me-md-2"
                                 >
                                     Products
-                                </button>
-                                <button
-                                    type="button"
+                                </a>
+                                <a
+                                    href="./deals.html"
                                     class="btn btn-outline-secondary btn-lg px-4"
                                 >
                                     Deals
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -366,14 +369,158 @@
                 </div>
             </div>
 
+            <!-- Cards row  -->
+            <div id="subscription" class="row justify-content-center my-5">
+                <div class="col-12 text-center mb-4 mt-5">
+                    <h2 class="text-uppercase fw-bold mb-2">Chip Market Pro</h2>
+                    <p class="lead">
+                        We also offer a subscription service to provide number
+                        of discounts for our customers. <br />
+                        Take a look at our offers!
+                    </p>
+                </div>
+
+                <!-- Basic Package -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="fas fa-globe text-primary fa-3x mb-3"></i>
+                            <h5 class="card-title">One Week Offer</h5>
+                            <hr class="w-75 mx-auto" />
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Free delivery
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Industry articles and trends
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >5% discount
+                                </li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a
+                                    href="index.html#contact"
+                                    class="btn btn-outline-primary mt-3"
+                                    >10€ One Time Purchase</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="fas fa-code text-primary fa-3x mb-3"></i>
+                            <h5 class="card-title">Monthly Subscription</h5>
+                            <hr class="w-75 mx-auto" />
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Free delivery
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Industry articles and trends
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >10€ voucher
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >10% discount
+                                </li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a
+                                    href="index.html#contact"
+                                    class="btn btn-primary mt-3"
+                                    >5€ Billed Every Month</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="fa fa-server text-primary fa-3x mb-3"></i>
+                            <h5 class="card-title">Yearly Subscription</h5>
+                            <hr class="w-75 mx-auto" />
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Free delivery
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Industry articles and trends
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >15€ voucher
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >10% discount
+                                </li>
+                                <li class="mb-2">
+                                    <i
+                                        class="fas fa-check text-success me-2"
+                                    ></i
+                                    >Special deals and promotions
+                                </li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a
+                                    href="index.html#contact"
+                                    class="btn btn-outline-primary mt-3"
+                                    >50€ Billed Every Year</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- About -->
             <div
                 id="about-us"
-                class="position-relative overflow-hidden p-3 p-md-5 m-0 text-start bg-dark bg-gradient w-100"
+                class="position-relative overflow-hidden p-3 p-md-5 m-0 text-start bg-dark bg-gradient w-100 text-light"
             >
                 <div class="col-md-8 p-lg-5 mx-auto my-5">
                     <h2 class="display-3 fw-bold text-center mb-4">About Us</h2>
-                    <h4 class="fw-normal text-muted mb-4">
+                    <h4 class="fw-normal mb-4">
                         Welcome to
                         <strong class="text-primary">Cheap Market</strong>, your
                         go-to destination for
@@ -403,17 +550,17 @@
                         Why Choose Us?
                     </h3>
                     <ul class="list-group list-group-flush mb-5">
-                        <li class="list-group-item bg-transparent">
+                        <li class="list-group-item bg-transparent text-light">
                             <i class="bi bi-check-circle-fill text-primary"></i>
                             <strong>Premium, Brand-New Chips</strong> – No
                             second-hand or refurbished parts.
                         </li>
-                        <li class="list-group-item bg-transparent">
+                        <li class="list-group-item bg-transparent text-light">
                             <i class="bi bi-check-circle-fill text-primary"></i>
                             <strong>Competitive Pricing</strong> – Get the best
                             value for top-tier performance.
                         </li>
-                        <li class="list-group-item bg-transparent">
+                        <li class="list-group-item bg-transparent text-light">
                             <i class="bi bi-check-circle-fill text-primary"></i>
                             <strong>Fast & Secure Shipping</strong> – We deliver
                             your chips safely and quickly.
@@ -449,7 +596,7 @@
                                 />
                             </svg>
                         </a>
-                        <a class="icon-link" href="#">
+                        <a class="icon-link" href="./products.html">
                             Products
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -598,13 +745,7 @@
             </section>
 
             <!-- footer -->
-            <div class="container py-5">
-                <footer class="py-3 my-4">
-                    <p class="text-center text-body-secondary border-top">
-                        <span class="">© 2024 Chip Market</span>
-                    </p>
-                </footer>
-            </div>
+            <div id="footer-container"></div>
         </main>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -613,6 +754,7 @@
         ></script>
         <script src="./js/cart-manager.js"></script>
         <script src="./js/navbar.js"></script>
+        <script src="./js/footer.js"></script>
         <script src="./js/auth.js"></script>
     </body>
 </html>
