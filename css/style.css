@@ -1,3 +1,26 @@
+/* Navbar styling */
+.navbar {
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-sticky {
+    opacity: 0.85;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+/* Cart badge styling */
+.cart-badge {
+    font-size: 0.7rem;
+}
+
+/* Cart dropdown styling */
+.cart-dropdown-menu {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
 #subscription {
     width: 90%;
     max-width: 1200px;
@@ -29,6 +52,17 @@
     position: sticky;
     top: 0;
     z-index: 1030;
+}
+
+.invitation-bg {
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url('../images/photo-1523961131990-5ea7c61b2107.avif') center center
+            no-repeat;
+    background-size: cover;
 }
 
 .carousel-control-prev-icon,

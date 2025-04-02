@@ -32,119 +32,241 @@
             <!-- Navbar Container -->
             <div id="navbar" class="container-fluid px-0 bg-body"></div>
 
-            <!-- Slides -->
-            <div
-                id="myCarousel"
-                class="carousel slide shadow"
-                data-bs-ride="carousel"
-            >
-                <div class="carousel-indicators">
+            <!-- Header Carousel -->
+            <div class="container-fluid px-0">
+                <div
+                    id="mainCarousel"
+                    class="carousel slide carousel-fade"
+                    data-bs-ride="carousel"
+                >
+                    <!-- Indicators with custom styling -->
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#mainCarousel"
+                            data-bs-slide-to="0"
+                            class="active rounded-circle mx-2"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                            style="width: 10px; height: 10px"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#mainCarousel"
+                            data-bs-slide-to="1"
+                            class="rounded-circle mx-2"
+                            aria-label="Slide 2"
+                            style="width: 10px; height: 10px"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#mainCarousel"
+                            data-bs-slide-to="2"
+                            class="rounded-circle mx-2"
+                            aria-label="Slide 3"
+                            style="width: 10px; height: 10px"
+                        ></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <!-- First Slide - Sign-up Call to Action -->
+                        <div
+                            class="carousel-item active"
+                            style="
+                                background: linear-gradient(
+                                    135deg,
+                                    #2a2a72 0%,
+                                    #009ffd 100%
+                                );
+                            "
+                        >
+                            <div
+                                class="carousel-content"
+                                style="height: 600px; overflow: hidden"
+                            >
+                                <div class="container h-100">
+                                    <div
+                                        class="row h-100 align-items-center py-5"
+                                    >
+                                        <div
+                                            class="col-lg-6 text-center text-lg-start text-white"
+                                        >
+                                            <h1 class="display-4 fw-bold mb-3">
+                                                Join our Community
+                                            </h1>
+                                            <p class="lead fs-4 mb-4">
+                                                Register now for exclusive deals
+                                                and early access to new products
+                                                at
+                                                <span
+                                                    class="fw-bold text-warning"
+                                                    >Cheap Market</span
+                                                >
+                                            </p>
+                                            <div
+                                                class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start"
+                                            >
+                                                <a
+                                                    href="#register"
+                                                    class="btn btn-light btn-lg px-4 py-2 fw-semibold"
+                                                    >Register Now</a
+                                                >
+                                                <a
+                                                    href="#login"
+                                                    class="btn btn-outline-light btn-lg px-4 py-2"
+                                                    >Log In</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-lg-6 d-none d-lg-flex justify-content-center"
+                                        >
+                                            <img
+                                                src="./images/photo-1523961131990-5ea7c61b2107.avif"
+                                                alt="Shopping illustration"
+                                                class="img-fluid rounded-4 shadow"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Slide - GPU Products -->
+                        <div
+                            class="carousel-item"
+                            style="background-color: #1a1a1a"
+                        >
+                            <div
+                                class="carousel-content"
+                                style="height: 600px; overflow: hidden"
+                            >
+                                <div class="container-fluid px-0 h-100">
+                                    <div class="row g-0 h-100">
+                                        <div
+                                            class="col-lg-6 d-none d-lg-block h-100"
+                                        >
+                                            <img
+                                                src="./images/512T3hTT5ZL.png"
+                                                alt="GPU Products"
+                                                class="w-100 h-100 object-fit-cover"
+                                            />
+                                        </div>
+                                        <div
+                                            class="col-lg-6 d-flex align-items-center h-100"
+                                            style="background-color: #1a1a1a"
+                                        >
+                                            <div class="p-4 p-lg-5 text-white">
+                                                <h6
+                                                    class="text-warning fw-bold mb-3"
+                                                >
+                                                    NEW ARRIVALS
+                                                </h6>
+                                                <h1
+                                                    class="display-4 fw-bold mb-4"
+                                                >
+                                                    Next-Gen GPUs & AI
+                                                    Accelerators
+                                                </h1>
+                                                <p class="lead mb-4">
+                                                    Unparalleled performance for
+                                                    gaming, design, and AI
+                                                    workloads at competitive
+                                                    prices.
+                                                </p>
+                                                <a
+                                                    href="./products.html"
+                                                    class="btn btn-warning btn-lg px-4 py-2 fw-semibold"
+                                                    >Shop Now</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Slide - Server Products -->
+                        <div
+                            class="carousel-item"
+                            style="background-color: #003366"
+                        >
+                            <div
+                                class="carousel-content"
+                                style="height: 600px; overflow: hidden"
+                            >
+                                <div class="container-fluid px-0 h-100">
+                                    <div class="row g-0 h-100">
+                                        <div
+                                            class="col-lg-6 d-flex align-items-center order-lg-1 h-100"
+                                            style="background-color: #003366"
+                                        >
+                                            <div class="p-4 p-lg-5 text-white">
+                                                <h6
+                                                    class="text-info fw-bold mb-3"
+                                                >
+                                                    ENTERPRISE SOLUTIONS
+                                                </h6>
+                                                <h1
+                                                    class="display-4 fw-bold mb-4"
+                                                >
+                                                    Server & Data Center
+                                                    Solutions
+                                                </h1>
+                                                <p class="lead mb-4">
+                                                    High-performance chips and
+                                                    components for enterprise
+                                                    applications with premium
+                                                    support.
+                                                </p>
+                                                <a
+                                                    href="./products.html"
+                                                    class="btn btn-info btn-lg px-4 py-2 fw-semibold"
+                                                    >Explore</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-lg-6 d-none d-lg-block order-lg-0 h-100"
+                                        >
+                                            <img
+                                                src="./images/1295710.avif"
+                                                alt="Server Products"
+                                                class="w-100 h-100 object-fit-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation controls -->
                     <button
+                        class="carousel-control-prev"
                         type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-label="Slide 1"
-                        aria-current="true"
-                    ></button>
-                    <button
-                        type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"
-                        class=""
-                    ></button>
-                    <button
-                        type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"
-                        class=""
-                    ></button>
-                </div>
-                <div class="carousel-inner">
-                    <div
-                        class="carousel-item carousel-item-next carousel-item-start"
+                        data-bs-target="#mainCarousel"
+                        data-bs-slide="prev"
                     >
-                        <img
-                            src="./images/photo-1524234107056-1c1f48f64ab8.avif"
-                            class="d-block w-100"
-                            alt="slide"
-                        />
-                        <div class="container">
-                            <div class="carousel-caption text-start text-light">
-                                <h1>Chip Market</h1>
-                                <p>
-                                    <a class="btn btn-lg btn-info mt-2" href="#"
-                                        >Sign up today</a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img
-                            src="./images/geforce-rtx-3090-ti-product-gallery-full-screen-3840-1.jpg"
-                            class="d-block w-100"
-                            alt="slide"
-                        />
-                        <div class="container">
-                            <div class="carousel-caption text-light">
-                                <h1>GPUs & AI Chips</h1>
-                                <p>
-                                    <a
-                                        class="btn btn-lg btn-info mt-2"
-                                        href="./products.html"
-                                        >Browse</a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item active carousel-item-start">
-                        <img
-                            src="./images/1295710.avif"
-                            class="d-block w-100"
-                            alt="slide"
-                        />
-                        <div class="container">
-                            <div class="carousel-caption text-end text-light">
-                                <h1>Server & Data Center Chips</h1>
-                                <p>
-                                    <a
-                                        class="btn btn-lg btn-info mt-2"
-                                        href="./products.html"
-                                        >Browse</a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#mainCarousel"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#myCarousel"
-                    data-bs-slide="prev"
-                >
-                    <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#myCarousel"
-                    data-bs-slide="next"
-                >
-                    <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
 
             <!-- Product Section -->

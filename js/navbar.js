@@ -22,7 +22,7 @@ class NavbarComponent {
 
     render() {
         this.container.innerHTML = `
-            <nav class="navbar navbar-expand-lg shadow mb-4 sticky-top">
+            <nav class="navbar navbar-expand-lg shadow mb-0 sticky-top">
                 <div class="container">
                     <a href="/" class="navbar-brand">
                         <h1 class="fs-4 m-0 link-primary">Chip Market</h1>
@@ -75,6 +75,78 @@ class NavbarComponent {
         this.addEventListeners();
         this.updateCartDisplay();
         this.updateAuthDisplay();
+    }
+
+    userScroll() {
+        const navbar = document.querySelector('#navbar');
+        const cartDropdown = document.querySelector('.cart-dropdown-menu');
+        const cartToggleButton = document.querySelector(
+            '[data-bs-toggle="dropdown"]'
+        );
+
+        const updateNavbarOpacity = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-sticky'); // Ensure sticky class is present
+                if (cartDropdown && cartDropdown.classList.contains('show')) {
+                    navbar.style.opacity = '1';
+                } else {
+                    navbar.style.opacity = '0.85';
+                }
+            } else {
+                navbar.classList.remove('navbar-sticky'); // Remove sticky class at the top
+                navbar.style.opacity = '1'; // Full opacity at the top
+            }
+        };
+
+        function applyNavbarStylesOnScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark');
+                navbar.classList.add('border-bottom');
+                navbar.classList.add('border-secondary');
+                navbar.classList.add('navbar-sticky');
+            } else {
+                navbar.classList.remove('bg-dark');
+                navbar.classList.remove('border-bottom');
+                navbar.classList.remove('border-secondary');
+                navbar.classList.remove('navbar-sticky');
+            }
+            updateNavbarOpacity();
+        }
+
+        // Apply styles on scroll
+        window.addEventListener('scroll', applyNavbarStylesOnScroll);
+
+        // Check and apply styles on page load/refresh
+        window.addEventListener('load', () => {
+            applyNavbarStylesOnScroll(); // Apply initial sticky styles and opacity
+        });
+
+        // Listen for the cart dropdown to show/hide
+        if (cartToggleButton) {
+            cartToggleButton.addEventListener('click', () => {
+                // Use setTimeout to ensure the 'show' class is toggled before checking
+                setTimeout(updateNavbarOpacity, 10);
+            });
+        }
+
+        // Mutation Observer to detect changes in the cart dropdown's class
+        if (cartDropdown) {
+            const observer = new MutationObserver((mutationsList) => {
+                mutationsList.forEach((mutation) => {
+                    if (
+                        mutation.type === 'attributes' &&
+                        mutation.attributeName === 'class'
+                    ) {
+                        updateNavbarOpacity();
+                    }
+                });
+            });
+
+            observer.observe(cartDropdown, {
+                attributes: true,
+                attributeFilter: ['class'],
+            });
+        }
     }
 
     getActiveLink() {
@@ -162,6 +234,7 @@ class NavbarComponent {
         if (checkoutBtn) {
             checkoutBtn.addEventListener('click', () => {
                 this.cartManager.proceedToCheckout();
+                this.addFullOpacity();
             });
         }
 
@@ -292,6 +365,8 @@ class NavbarComponent {
             .querySelectorAll('.quantity-decrease')
             .forEach((button) => {
                 button.addEventListener('click', (e) => {
+                    // Prevent the click from closing the dropdown
+                    e.stopPropagation();
                     const itemId = +e.currentTarget.dataset.id;
                     const cartItems = this.cartManager.getCartItems();
                     const item = cartItems.find((item) => item.id === itemId);
@@ -309,6 +384,8 @@ class NavbarComponent {
             .querySelectorAll('.quantity-increase')
             .forEach((button) => {
                 button.addEventListener('click', (e) => {
+                    // Prevent the click from closing the dropdown
+                    e.stopPropagation();
                     const itemId = +e.currentTarget.dataset.id;
                     const cartItems = this.cartManager.getCartItems();
                     const item = cartItems.find((item) => item.id === itemId);
@@ -324,6 +401,8 @@ class NavbarComponent {
         // Remove item buttons
         this.container.querySelectorAll('.remove-item').forEach((button) => {
             button.addEventListener('click', (e) => {
+                // Prevent the click from closing the dropdown
+                e.stopPropagation();
                 const itemId = e.currentTarget.dataset.id;
                 this.cartManager.removeItem(+itemId);
             });
@@ -378,6 +457,7 @@ function initNavbar() {
     if (navbarContainer) {
         const navbar = new NavbarComponent('navbar');
         navbar.render();
+        navbar.userScroll();
     }
 }
 
